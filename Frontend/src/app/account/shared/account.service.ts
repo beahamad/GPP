@@ -17,7 +17,6 @@ export class AccountService {
       window.localStorage.setItem('token', result.access_token);
       return true;
     }
-
     return false;
   }
 

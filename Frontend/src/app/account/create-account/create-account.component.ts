@@ -27,7 +27,7 @@ export class CreateAccountComponent implements OnInit {
     try {
       const result = await this.accountService.createAccount(this.user);
 
-      //mensagem aqui de sucesso
+      alert('Conta criada com sucesso!');
       console.log(result);
     } catch (error) {
       console.error(error);

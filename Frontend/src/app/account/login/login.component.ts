@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       // navego para a rota vazia novamente
       this.router.navigate(['']);
     } catch (error) {
+      alert('Email ou senha incorretos');
       console.error(error);
     }
   }
