@@ -13,11 +13,11 @@ import { PoliciaComponent } from './telas/policia/policia.component';
 import { authPoliciaGuard } from './account/shared/auth-policia.guard';
 
 const routes: Routes = [
-  {
+  /*{
     path: '',
     component: PoliciaComponent,
-    //canActivate: [authPoliciaGuard]
-  },
+    canActivate: [authPoliciaGuard]
+  },*/
   {
     path: '',
     component: HomeComponent,
