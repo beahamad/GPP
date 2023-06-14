@@ -22,6 +22,10 @@
         <input id="cpf" name="cpf" placeholder="Insira o seu CPF"  type="text" [(ngModel)]="user.cpf" required>
       </div>
       <div class="text-box">
+        <label for="date_of_birth">Data de nascimento</label>
+        <input id="date_of_birth" name="date_of_birth" type="date" [(ngModel)]="user.date_of_birth" required>
+      </div>
+      <div class="text-box">
         <label for="adress">Endereço</label>
         <input id="adress" name="adress" placeholder="Insira o seu endereço"  type="text" [(ngModel)]="user.address" required>
       </div>
