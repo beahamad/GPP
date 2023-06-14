@@ -8,6 +8,8 @@ ARG USER_HOME_DIR="/tmp"
 
 ENV NPM_CONFIG_LOGLEVEL=warn NG_CLI_ANALYTICS=false TZ=UTC
 ENV HOME "$USER_HOME_DIR"
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=4200
 
 WORKDIR $APP_DIR
 COPY . .
@@ -24,7 +26,7 @@ RUN set -xe \
     && mkdir -p $APP_DIR \
     && chown $USER_ID $APP_DIR \
     && chown -R node /usr/local/lib /usr/local/include /usr/local/share /usr/local/bin \
-    && (cd "$USER_HOME_DIR"; su node -c "npm install -g @angular/cli@$NG_CLI_VERSION; npm install -g pnpm; npm cache clean --force")
+    && (cd "$USER_HOME_DIR"; su node -c "npm install -g @angular/cli@$NG_CLI_VERSION; npm install -g pnpm; npm cache clean --force; npm audit fix")
 
 USER $USER_ID
 
