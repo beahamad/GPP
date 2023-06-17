@@ -4,7 +4,7 @@ class User(db.Model):
     __tablename__ = 'user'
 
     id = db.Column(db.Integer, primary_key=True)
-    cpf = db.Column(db.String(11), unique=True, nullable=False)
+    cpf = db.Column(db.String(14), unique=True, nullable=False)
     full_name = db.Column(db.String(100), nullable=False)
     date_of_birth = db.Column(db.Date, nullable=False)
     address = db.Column(db.String(200), nullable=False)
