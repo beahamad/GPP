@@ -2,12 +2,11 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-SENDER_EMAIL = 'gppdb23@gmail.com'
-SENDER_PASSWORD = 'tmutnrdhgqhakbyh'
-#sender_password = 'gppDB@-23'
+SENDER_EMAIL = 'gppdb23@outlook.com'
+SENDER_PASSWORD = 'gppDB@24'
 
 def send_email(recipient_email, subject, message):
-    smtp_server = 'smtp.gmail.com'
+    smtp_server = 'smtp-mail.outlook.com'
     smtp_port = 587
 
     msg = MIMEMultipart()
