@@ -22,7 +22,8 @@ const routes: Routes = [
     component: HomeComponent,
     children:[
       {path: 'perfil', component: PerfilComponent},
-      {path: 'edit-perfil', component: EditPerfilComponent}
+      {path: 'edit-perfil', component: EditPerfilComponent},
+      { path: 'adicionar-dispositivo', component: AddDispositivoComponent}
     ],
     canActivate: [AuthGuard]
   },
@@ -30,13 +31,13 @@ const routes: Routes = [
     path: '',
     component: AuthenticationComponent,
     children: [
-      { path: '', redirectTo: 'home-screen', pathMatch: 'full' },
-      { path: 'home-screen', component: HomeScreenComponent},
+      { path: '', component: HomeScreenComponent},
       { path: 'login', component: LoginComponent },
-      { path: 'create-account', component: CreateAccountComponent },
-      { path: 'adicionar-dispositivo', component: AddDispositivoComponent}
+      { path: 'create-account', component: CreateAccountComponent }
+      
     ]
-  }
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

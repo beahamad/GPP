@@ -44,6 +44,7 @@ export class CreateAccountComponent implements OnInit {
         alert('Conta criada com sucesso!');
         console.log(result);
     }catch(error){
+      alert("código incorreto");
       console.log(error);
     }
   }
