@@ -17,12 +17,16 @@ export class AccountService {
       window.localStorage.setItem('token', result.access_token);
       return true;
     }
-
     return false;
   }
 
   async createAccount(account: any) {
     const result = await this.http.post<any>(`${environment.api}/register`, account).toPromise();
+    return result;
+  }
+
+  async confirmAccount (account: any){
+    const result = await this.http.post<any>(`${environment.api}/confirm`, account).toPromise();
     return result;
   }
 

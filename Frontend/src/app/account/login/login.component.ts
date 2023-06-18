@@ -28,8 +28,9 @@ export class LoginComponent implements OnInit {
       console.log(`Login efetuado: ${result}`);
 
       // navego para a rota vazia novamente
-      this.router.navigate(['']);
+      this.router.navigate(['/perfil']);
     } catch (error) {
+      alert('Email ou senha incorretos');
       console.error(error);
     }
   }
