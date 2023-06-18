@@ -18,7 +18,7 @@ export class PerfilComponent {
   ngOnInit() {
     this.geralService.getPerfil().subscribe(profile => {
       this.user = profile;
-      console.log(this.user);
+      console.log(this.user.phones);
     });
 
 
