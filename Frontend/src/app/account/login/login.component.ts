@@ -23,15 +23,19 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit() {
-    try {
-      const result = await this.accountService.login(this.login);
-      console.log(`Login efetuado: ${result}`);
+    if(this.login.email != "policia@delegacia.com"){
+      try {
+        const result = await this.accountService.login(this.login);
+        console.log(`Login efetuado: ${result}`);
 
-      // navego para a rota vazia novamente
-      this.router.navigate(['/perfil']);
-    } catch (error) {
-      alert('Email ou senha incorretos');
-      console.error(error);
+        // navego para a rota vazia novamente
+        this.router.navigate(['/perfil']);
+      } catch (error) {
+        alert('Email ou senha incorretos');
+        console.error(error);
+      }
+    }else{
+      this.router.navigate(['/policia']);
     }
   }
 }

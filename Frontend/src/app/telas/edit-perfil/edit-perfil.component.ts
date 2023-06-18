@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountService } from 'src/app/account/shared/account.service';
+import { GeralService } from '../commom/geral.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-perfil',
@@ -14,14 +16,16 @@ export class EditPerfilComponent {
   };
   
   constructor(
-    private accountService: AccountService
+    private geralService: GeralService,
+    private router: Router
   ) { }
 
   async onSubmit() {
     try {
-      const result = await this.accountService.createAccount(this.user);
+      const result = await this.geralService.editAccount(this.user);
 
-      //mensagem aqui de sucesso
+      alert("dados alterados com sucesso");
+      this.router.navigate(['/perfil']);
       console.log(result);
     } catch (error) {
       console.error(error);

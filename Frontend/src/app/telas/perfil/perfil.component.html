@@ -2,7 +2,7 @@
     <div class="profile-header">
         <img src="https://img.freepik.com/free-icon/user_318-159711.jpg">
         <div class="lateral-perfil">
-            <h2>{{user.name}}</h2>
+            <h2>{{user.full_name}}</h2>
             <a href="/edit-perfil">
                 <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png">
             </a>
@@ -10,11 +10,11 @@
     </div>
     <div class="dispositivos">
         <h4>dispositivos:</h4>
-        <div *ngIf="phones.length == 0" class="alerta-no-phone">
+        <div *ngIf=" user.phones.length == 0" class="alerta-no-phone">
             <h5> Nenhum dispositivo cadastrado, cadastre um novo agora mesmo!</h5>
         </div>
-        <ul class="list-group" *ngIf="phones.length > 0">
-            <li *ngFor="let phone in phones">
+        <ul class="list-group" *ngIf=" user.phones.length> 0">
+            <li *ngFor="let phone in user.phones">
                 <h5 style="width: 90%;">{{phone.modelo}}</h5>
                 <!--
                 <button>v</button>
