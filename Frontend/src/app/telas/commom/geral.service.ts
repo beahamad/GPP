@@ -16,6 +16,11 @@ export class GeralService {
     return result;
   }
 
+  async addPhone(phone: any) {
+    const result = await this.http.post<any>(`${environment.api}/register/phone`, phone).toPromise();
+    return result;
+  }
+
   getPerfil(){
     return this.http.get<Profile>(`${environment.api}/profile`);
   }
