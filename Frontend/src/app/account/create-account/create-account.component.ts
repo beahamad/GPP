@@ -13,8 +13,10 @@ export class CreateAccountComponent implements OnInit {
     password: '',
     address: '',
     date_of_birth: '',
-    cpf: ''
+    cpf: '',
+    confirmation_code: ''
   };
+  modal = false;
 
   constructor(
     private accountService: AccountService
@@ -26,11 +28,23 @@ export class CreateAccountComponent implements OnInit {
   async onSubmit() {
     try {
       const result = await this.accountService.createAccount(this.user);
+      this.modal=true;
+      window.scrollTo(0, 0);
 
-      alert('Conta criada com sucesso!');
       console.log(result);
     } catch (error) {
+      alert(error);
       console.error(error);
+    }
+  }
+
+  async confirma(){
+    try{
+        const result = await this.accountService.confirmAccount(this.user);
+        alert('Conta criada com sucesso!');
+        console.log(result);
+    }catch(error){
+      console.log(error);
     }
   }
 }

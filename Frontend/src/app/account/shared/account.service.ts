@@ -25,6 +25,11 @@ export class AccountService {
     return result;
   }
 
+  async confirmAccount (account: any){
+    const result = await this.http.post<any>(`${environment.api}/confirm`, account).toPromise();
+    return result;
+  }
+
   getAuthorizationToken(){
     const token = window.localStorage.getItem('token');
     return token;

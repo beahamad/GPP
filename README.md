@@ -8,6 +8,6 @@ Como rodar o servidor backend:
 Rodar o Front:
 1. instale o node
 2. instale o angular
-3. rode `ng serve`na pasta "front" do projeto
+3. rode `npm install`na pasta "front" do projeto e depois `ng serve`
 
 Como o database foi criado e exemplos de chamadas de rotas podem ser encontrados [aqui](https://docs.google.com/document/d/1eP_nUBj9I_Rp1lTbk5QxzzYulvSjlBz-tAuLSxlssaE/edit?usp=sharing).
